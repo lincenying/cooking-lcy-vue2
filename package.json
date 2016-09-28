@@ -1,27 +1,31 @@
 {
-  "name": "cooking-vue2",
-  "version": "0.2.2",
-  "description": "A cooking plugin to extend vue 2 config.",
+  "name": "cooking-lcy-vue2",
+  "version": "1.0.0",
+  "description": "A cooking plugin to extend vue config.",
   "main": "index.js",
   "scripts": {
     "test": ""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cookingjs/cooking-vue2.git"
+    "url": "git+https://github.com/lincenying/cooking-lcy-vue2.git"
   },
   "keywords": [
     "cooking",
     "vue",
     "cooking-plugin"
   ],
-  "author": "qingwei-li <qingwei.li@ele.me>",
+  "author": "lincenying <lincenying@qq.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cookingjs/cooking-vue2/issues"
+    "url": "https://github.com/lincenying/cooking-lcy-vue2/issues"
   },
-  "homepage": "https://github.com/cookingjs/cooking-vue2#readme",
+  "homepage": "https://github.com/lincenying/cooking-lcy-vue2#readme",
   "dependencies": {
-    "vue-loader": "^9.4.2"
+    "vue-loader": "^9.5.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2"
   }
 }
