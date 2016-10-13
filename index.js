@@ -48,11 +48,6 @@ module.exports = function(cooking) {
     // 删除cooking配置的各种css加载器
     moduleLoaders = cooking.config.module.loaders
     moduleLoaders.css && delete moduleLoaders.css
-    moduleLoaders.less && delete moduleLoaders.less
-    moduleLoaders.sass && delete moduleLoaders.sass
-    moduleLoaders.scss && delete moduleLoaders.scss
-    moduleLoaders.stylus && delete moduleLoaders.stylus
-    moduleLoaders.styl && delete moduleLoaders.styl
 
     cooking.config.module.loaders = Object.assign({},
     moduleLoaders,
