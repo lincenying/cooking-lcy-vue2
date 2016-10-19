@@ -23,7 +23,6 @@ module.exports = function(cooking) {
     cooking.config.resolve.extensions.push('.vue')
 
     var plugins = cooking.config.postcss
-    var css = cooking._userConfig.css
 
     if (Array.isArray(plugins)) {
         cooking.config.vue.postcss = function(webpack) {
@@ -34,27 +33,28 @@ module.exports = function(cooking) {
     }
 
     // add vue config
-    cooking.config.vue.loaders = Object.assign({}, {
-        js: 'babel-loader'
-    },
-    cooking.config.vue.loaders,
-    utils.cssLoader({
-        css: css,
-        postcss: plugins,
-        sourceMap: SOURCE_MAP ? '#source-map' : false,
-        extract: !!cooking.config.extractCSS
-    }))
+    cooking.config.vue.loaders = Object.assign(
+        {},
+        { js: 'babel-loader' },
+        cooking.config.vue.loaders,
+        utils.cssLoader({
+            postcss: plugins,
+            sourceMap: SOURCE_MAP ? '#source-map' : false,
+            extract: !!cooking.config.extractCSS
+        })
+    )
 
     // 删除cooking配置的各种css加载器
     moduleLoaders = cooking.config.module.loaders
     moduleLoaders.css && delete moduleLoaders.css
 
-    cooking.config.module.loaders = Object.assign({},
-    moduleLoaders,
-    utils.styleLoaders({
-        css: css,
-        postcss: plugins,
-        sourceMap: SOURCE_MAP ? '#source-map' : false,
-        extract: !!cooking.config.extractCSS
-    }))
+    cooking.config.module.loaders = Object.assign(
+        {},
+        moduleLoaders,
+        utils.styleLoaders({
+            postcss: plugins,
+            sourceMap: SOURCE_MAP ? '#source-map' : false,
+            extract: !!cooking.config.extractCSS
+        })
+    )
 }

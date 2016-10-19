@@ -10,20 +10,6 @@
 }
 ```
 
-postcss配置参考官方
-
-css配置:
-```
-{
-  css: '-autoprefixer'
-}
-```
-```
-{
-  css: ['-autoprefixer', 'other']
-}
-```
-
 ## include
 - "vue-loader": "^9.5.0",
 - "less": "^2.7.1",
